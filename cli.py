@@ -19,19 +19,19 @@ def main():
 
     if args.check_api:
         print("\n=== Running API Checker ===")
-        api_checker.run(args.path)
+        api_checker.check_api_errors(args.path)
     if args.check_vars:
         print("\n=== Running Undefined Variable Checker ===")
-        var_checker.run(args.path)
+        var_checker.check_undefined_variables(args.path)
     if args.check_imports:
         print("\n=== Running Import Checker ===")
-        import_checker.run(args.path)
+        import_checker.check_import_errors(args.path)
     if args.trace:
         print("\n=== Running Stack Trace Analyzer ===")
-        trace_analyzer.run(args.path)
+        trace_analyzer.analyze_stack_trace(args.path)
     if args.keywords:
         print("\n=== Running Keyword Scanner ===")
-        keyword_scanner.run(args.path)
+        keyword_scanner.scan_error_keywords(args.path)
 
 if __name__ == "__main__":
     main()
